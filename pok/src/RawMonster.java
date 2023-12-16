@@ -1,7 +1,7 @@
 public class rawMonster
 {
     private String name;
-    private String type;
+    private Type type;
     private int minHP;
     private int maxHP;
     private int minSpeed;
@@ -11,7 +11,7 @@ public class rawMonster
     private int minDefense;
     private int maxDefense;
     private double paralysisChance;
-    //==========================================================================
+    private double burnChance;
 
     public String getName() {
         return name;
@@ -21,11 +21,11 @@ public class rawMonster
         this.name = name;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
@@ -99,5 +99,30 @@ public class rawMonster
 
     public void setParalysisChance(double paralysisChance) {
         this.paralysisChance = paralysisChance;
+    }
+
+    public void setFloodChance(int i) {
+    }
+
+    public void setFallChance(int i) {
+    }
+
+    public void setHideChance(int i) {
+    }
+
+    public void setHealChance(int i) {
+    }
+
+    public void setPoisonChance(int i) {
+    }
+
+    public void setBurnChance(int i) {
+        this.burnChance=i;
+    }
+
+    public Monster toMonster(Monster monster) {
+        return new Monster(
+
+        )
     }
 }
