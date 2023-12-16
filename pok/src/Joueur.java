@@ -3,15 +3,15 @@ public class Joueur {
     Objet[] objets;
     Monster[] monstres;
 
-    void changerMonstre() {
+    public void changerMonstre() {
 
     }
 
-    void utiliserObjet() {
+    public void utiliserObjet() {
 
     }
 
-    void choisirAttaque() {
+    public void choisirAttaque() {
 
     }
 }

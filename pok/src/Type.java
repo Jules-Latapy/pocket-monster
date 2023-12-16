@@ -6,7 +6,7 @@ public enum Type {
     PLANTE,
     FOUDRE;
 
-    boolean estFaible(Type t2) {
+    public boolean estFaible(Type t2) {
         switch (this) {
             case FEU:
                 if (t2==EAU)
@@ -29,7 +29,7 @@ public enum Type {
         }
     }
 
-    boolean estFort(Type t2) {
+    public boolean estFort(Type t2) {
         switch (this) {
             case EAU:
                 if (t2==FEU)
