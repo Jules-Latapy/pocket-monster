@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.*;
 
 public class RawMonster
 {
@@ -12,13 +12,8 @@ public class RawMonster
     private int maxAttack;
     private int minDefense;
     private int maxDefense;
-    private double paralysisChance;
-    private double burnChance;
-    private double poisonChance;
-    private double fallChance;
-    private double floodChance;
-    private double healChance;
-    private double hideChance;
+
+    private Map<String, Double> specialAttribut = new HashMap<>();
 
     public void setName(String name) {
         this.name = name;
@@ -60,43 +55,39 @@ public class RawMonster
         this.maxDefense = maxDefense;
     }
 
-    public void setParalysisChance(double paralysisChance) {
-        this.paralysisChance = paralysisChance;
-    }
-
-    public void setFloodChance(double i) {
-        this.floodChance=i;
-    }
-
-    public void setFallChance(double i) {
-        this.fallChance=i;
-    }
-
-    public void setHideChance(double i) {
-        this.hideChance=i;
-    }
-
-    public void setHealChance(double i) {
-        this.healChance=i;
-    }
-
-    public void setPoisonChance(double i) {
-        this.poisonChance=i;
-    }
-
-    public void setBurnChance(double i) {
-        this.burnChance=i;
+    public Map<String, Double> getSpecialAttribut() {
+        return specialAttribut;
     }
 
     public Monster toMonster() {
+
+        assertTypeCoherence();
+
         return new Monster(
             new Attaque[4],
+            minHP + (int)(Math.random() * ((minHP - maxHP) + 1)),
             minDefense + (int)(Math.random() * ((minDefense - maxDefense) + 1)),
-            minSpeed + (int)(Math.random() * ((minSpeed - maxSpeed) + 1)),
-            0,
-            type,
             minAttack + (int)(Math.random() * ((minAttack - maxAttack) + 1)),
-            minHP + (int)(Math.random() * ((minHP - maxHP) + 1))
-        );
+            minSpeed + (int)(Math.random() * ((minSpeed - maxSpeed) + 1)),
+            type,
+            specialAttribut
+            );
+    }
+
+    private void assertTypeCoherence() {
+        List<String> attributes = new ArrayList<>(specialAttribut.keySet());
+        attributes.sort(String::compareTo);
+
+        List<String> references = new ArrayList<>(List.of(type.getAttribute())); //List.of = unmodifiable
+        references.sort(String::compareTo);
+
+        if (references.size()!=attributes.size())
+            throw new IllegalArgumentException("Le fichier de configutation à des parametres de capacité spécial en trop/ en moins");
+
+        for (int i = 0; i < references.size(); i++) {
+            if (!references.get(i).equals(attributes.get(i))) {
+                throw new IllegalArgumentException("le parametre '"+attributes.get(i)+"' n'est pas reconnu");
+            }
+        }
     }
 }

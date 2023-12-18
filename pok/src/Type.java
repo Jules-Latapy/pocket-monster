@@ -1,10 +1,20 @@
 public enum Type {
-    FEU,
-    EAU,
-    TERRE,
-    INSECTE,
-    PLANTE,
-    FOUDRE;
+    FEU("Burn"),
+    EAU("Flood", "Fall"),
+    TERRE("Hid"),
+    INSECTE("Poison"),
+    PLANTE("Heal"),
+    FOUDRE("Paralyzed");
+
+    public String[] getAttribute() {
+        return attribute;
+    }
+
+    private final String[] attribute;
+
+    Type(String... attribute) {
+        this.attribute=attribute;
+    }
 
     public boolean estFaible(Type t2) {
         switch (this) {

@@ -80,29 +80,8 @@ public class Lecteur
                             currentMonster.setMinDefense(Integer.parseInt(value));
                             currentMonster.setMaxDefense(Integer.parseInt(max));
                         }
-                        case "Flood" -> {
-                            currentMonster.setFloodChance(Integer.parseInt(value));
-                        }
-                        case "Fall" -> {
-                            currentMonster.setFallChance(Integer.parseInt(value));
-                        }
-                        case "Paralysis" -> {
-                            currentMonster.setParalysisChance(Integer.parseInt(value));
-                        }
-                        case "Hide" -> {
-                            currentMonster.setHideChance(Integer.parseInt(value));
-                        }
-                        case "Heal" -> {
-                            currentMonster.setHealChance(Integer.parseInt(value));
-                        }
-                        case "Poison" -> {
-                            currentMonster.setPoisonChance(Integer.parseInt(value));
-                        }
-                        case "Burn" -> {
-                            currentMonster.setBurnChance(Integer.parseInt(value));
-                        }
                         default -> {
-                            System.out.println("pas reconnu:"+attribute);
+                            currentMonster.getSpecialAttribut().put(attribute, Double.parseDouble(value));
                         }
                     }
                 }

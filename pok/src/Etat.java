@@ -2,5 +2,7 @@ public enum Etat {
     NORMAL,
     PARALYSER,
     EMPOISONNER,
-    BRULER;
+    BRULER,
+    MOUILLER,
+    CACHER;
 }

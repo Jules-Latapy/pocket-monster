@@ -3,12 +3,13 @@ public class Combat {
     /**
      * on admet ici que a.usage n'est pas déjà à zero
      * @param a
-     * @param m1 attaquant
-     * @param m2 attaqué
+     * @param attaquant attaquant
+     * @param attaquee attaqué
      */
-    public void attaque(Attaque a, Monster m1, Monster m2) {
+    public void attaque(Attaque a, Monster attaquant, Monster attaquee) {
 
         if ((int)(Math.random() * 101) <= a.getProbaEchec()) {
+            a.use();
             return;
         }
 
@@ -16,34 +17,46 @@ public class Combat {
 
         double degat;
 
+        double defense = attaquee.getDefence();
+
+        if (attaquee.getEtat()==Etat.CACHER) {
+            defense*=2;
+        }
+
         if (a.getNom().equals("main nue")) {
-            degat = 20 * (a.getPuissance() /m2.getDefence())*coef;
+            degat = 20 * (a.getPuissance() /defense)*coef;
         }
         else {
 
             double avantage = 1;
 
-            if (m2.getType().estFaible(a.getType())) {
+            if (attaquee.getType().estFaible(a.getType())) {
                 avantage = 0.5;
             }
 
-            if (m2.getType().estFort(a.getType())) {
+            if (attaquee.getType().estFort(a.getType())) {
                 avantage = 2;
             }
 
-            degat = 20 * ((11*a.getPuissance()*m1.getAttaque() /25*m2.getDefence())+2)*avantage*coef;
-
-            //TODO
-            m1.getCapaciteSpecial();
+            degat = 20 * ((11*a.getPuissance()*attaquant.getAttaque() /25*defense)+2)*avantage*coef;
 
             a.use();
         }
 
+        if (attaquant.getEtat()==Etat.MOUILLER && attaquant.getType()!=Type.EAU) {
+            if ((int)(Math.random() * 101) <= attaquee.getSpecialAttribut().get("Fall")) {
+                attaquant.setLifePoint( attaquant.getLifePoint() - degat * 0.25 );
+                return;
+            }
+        }
+
+        if (attaquant.getEtat()==Etat.PARALYSER) {
+            if ((int)(Math.random() * 101) <= attaquee.getSpecialAttribut().get("Paralysis")) {
+                return;
+            }
+        }
         /*-----------------------------*/
 
-        m1.getLifePoint( m1.getLifePoint() - degat);
-
-        //todo : empoisonnement
-
+        attaquee.setLifePoint( attaquee.getLifePoint() - degat);
     }
 }
