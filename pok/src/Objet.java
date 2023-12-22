@@ -1,2 +1,3 @@
-public class Objet {
+public interface Objet {
+    void consume(Monster monster);
 }

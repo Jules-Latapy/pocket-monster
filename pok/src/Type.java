@@ -1,10 +1,10 @@
 public enum Type {
     FEU("Burn"),
-    EAU("Flood", "Fall"),
+    WATER("Flood", "Fall"),
     TERRE("Hid"),
     INSECTE("Poison"),
     PLANTE("Heal"),
-    FOUDRE("Paralyzed");
+    ELECTRIC("Paralysis");
 
     public String[] getAttribute() {
         return attribute;
@@ -19,12 +19,12 @@ public enum Type {
     public boolean estFaible(Type t2) {
         switch (this) {
             case FEU:
-                if (t2==EAU)
+                if (t2== WATER)
                     return true;
-            case EAU:
-                if (t2==FOUDRE)
+            case WATER:
+                if (t2== ELECTRIC)
                     return true;
-            case FOUDRE:
+            case ELECTRIC:
                 if (t2==TERRE)
                     return true;
             case TERRE:
@@ -41,14 +41,14 @@ public enum Type {
 
     public boolean estFort(Type t2) {
         switch (this) {
-            case EAU:
+            case WATER:
                 if (t2==FEU)
                     return true;
-            case FOUDRE:
-                if (t2==EAU)
+            case ELECTRIC:
+                if (t2== WATER)
                     return true;
             case TERRE:
-                if (t2==FOUDRE)
+                if (t2== ELECTRIC)
                     return true;
             case FEU:
                 if (t2==PLANTE || t2==INSECTE)

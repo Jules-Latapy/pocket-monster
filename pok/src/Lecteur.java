@@ -9,7 +9,7 @@ public class Lecteur
 {
     private List<RawMonster> listRawMonster;
 
-    public List<Monster> getListMonster(String filePath)
+    public static List<Monster> getListMonster(String filePath)
     {
         return readMonstersFromFile(filePath).stream().map(RawMonster::toMonster).collect(Collectors.toList());
     }
@@ -30,6 +30,7 @@ public class Lecteur
                 {
                     isReadingMonster = true;
                     currentMonster = new RawMonster();
+                    continue;
                 }
 
                 if (line.startsWith("EndMonster"))
@@ -39,56 +40,54 @@ public class Lecteur
                     {
                         listMonsters.add(currentMonster);
                     }
+                    continue;
                 }
 
                 if (!isReadingMonster) {
                     continue;
                 }
 
-                String[] parts = line.split("\\s+");
+                String[] parts = line.trim().split("\\s+");
 
-                if (parts.length >= 2)
+                String attribute = parts[0];
+                String value = parts[1];
+
+                switch (attribute)
                 {
-                    String attribute = parts[0];
-                    String value = parts[1];
-
-                    switch (attribute)
-                    {
-                        case "Name" -> {
-                            currentMonster.setName(value);
-                        }
-                        case "Type" -> {
-                            currentMonster.setType(Type.valueOf(value.toUpperCase()));
-                        }
-                        case "HP" -> {
-                            String max = parts[2];
-                            currentMonster.setMinHP(Integer.parseInt(value));
-                            currentMonster.setMaxHP(Integer.parseInt(max));
-                        }
-                        case "Attack" -> {
-                            String max = parts[2];
-                            currentMonster.setMinAttack(Integer.parseInt(value));
-                            currentMonster.setMaxAttack(Integer.parseInt(max));
-                        }
-                        case "Speed" -> {
-                            String max = parts[2];
-                            currentMonster.setMinSpeed(Integer.parseInt(value));
-                            currentMonster.setMaxSpeed(Integer.parseInt(max));
-                        }
-                        case "Defense" -> {
-                            String max = parts[2];
-                            currentMonster.setMinDefense(Integer.parseInt(value));
-                            currentMonster.setMaxDefense(Integer.parseInt(max));
-                        }
-                        default -> {
-                            currentMonster.getSpecialAttribut().put(attribute, Double.parseDouble(value));
-                        }
+                    case "Name" -> {
+                        currentMonster.setName(value);
+                    }
+                    case "Type" -> {
+                        currentMonster.setType(Type.valueOf(value.toUpperCase()));
+                    }
+                    case "HP" -> {
+                        String max = parts[2];
+                        currentMonster.setMinHP(Integer.parseInt(value));
+                        currentMonster.setMaxHP(Integer.parseInt(max));
+                    }
+                    case "Attack" -> {
+                        String max = parts[2];
+                        currentMonster.setMinAttack(Integer.parseInt(value));
+                        currentMonster.setMaxAttack(Integer.parseInt(max));
+                    }
+                    case "Speed" -> {
+                        String max = parts[2];
+                        currentMonster.setMinSpeed(Integer.parseInt(value));
+                        currentMonster.setMaxSpeed(Integer.parseInt(max));
+                    }
+                    case "Defense" -> {
+                        String max = parts[2];
+                        currentMonster.setMinDefense(Integer.parseInt(value));
+                        currentMonster.setMaxDefense(Integer.parseInt(max));
+                    }
+                    default -> {
+                        currentMonster.getSpecialAttribut().put(attribute, Double.parseDouble(value));
                     }
                 }
             }
-        } catch (IOException e)
-        {
-            e.printStackTrace();
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
         }
         return listMonsters;
     }

@@ -1,15 +1,19 @@
 public class Combat {
 
+    Combat() {
+        //stocker ou non les joueurs
+    }
+
     /**
      * on admet ici que a.usage n'est pas déjà à zero
-     * @param a
+     * @param attaque attaque
      * @param attaquant attaquant
      * @param attaquee attaqué
      */
-    public void attaque(Attaque a, Monster attaquant, Monster attaquee) {
+    public static void attaque(Attaque attaque, Monster attaquant, Monster attaquee) {
 
-        if ((int)(Math.random() * 101) <= a.getProbaEchec()) {
-            a.use();
+        if ((int)(Math.random() * 101) <= attaque.getProbaEchec()) {
+            attaque.use();
             return;
         }
 
@@ -23,27 +27,27 @@ public class Combat {
             defense*=2;
         }
 
-        if (a.getNom().equals("main nue")) {
-            degat = 20 * (a.getPuissance() /defense)*coef;
+        if (attaque.getNom().equals("main nue")) {
+            degat = 20 * (attaque.getPuissance() /defense)*coef;
         }
         else {
 
             double avantage = 1;
 
-            if (attaquee.getType().estFaible(a.getType())) {
+            if (attaquee.getType().estFaible(attaque.getType())) {
                 avantage = 0.5;
             }
 
-            if (attaquee.getType().estFort(a.getType())) {
+            if (attaquee.getType().estFort(attaque.getType())) {
                 avantage = 2;
             }
 
-            degat = 20 * ((11*a.getPuissance()*attaquant.getAttaque() /25*defense)+2)*avantage*coef;
+            degat = 20 * ((11*attaque.getPuissance()*attaquant.getAttaque() /25*defense)+2)*avantage*coef;
 
-            a.use();
+            attaque.use();
         }
 
-        if (attaquant.getEtat()==Etat.MOUILLER && attaquant.getType()!=Type.EAU) {
+        if (attaquant.getEtat()==Etat.MOUILLER && attaquant.getType()!=Type.WATER) {
             if ((int)(Math.random() * 101) <= attaquee.getSpecialAttribut().get("Fall")) {
                 attaquant.setLifePoint( attaquant.getLifePoint() - degat * 0.25 );
                 return;

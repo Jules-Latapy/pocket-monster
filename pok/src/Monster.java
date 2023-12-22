@@ -7,10 +7,11 @@ public final class Monster {
     private final Type type;
     private final double attaque;
     private double lifePoint;
+
     private Etat etat = Etat.NORMAL;
+
     private int nbrTourEtat = 0;
     private Map<String, Double> specialAttribut;
-
     public Monster(
             Attaque[] attaques,
             double lifePoint,
@@ -47,6 +48,10 @@ public final class Monster {
 
     public Etat getEtat() {
         return etat;
+    }
+
+    public void setEtat(Etat etat) {
+        this.etat = etat;
     }
 
     public Type getType() {
