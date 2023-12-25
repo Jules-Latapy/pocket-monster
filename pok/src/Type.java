@@ -1,4 +1,6 @@
 public enum Type {
+
+    NORMAL,
     FEU("Burn"),
     WATER("Flood", "Fall"),
     TERRE("Hid"),
@@ -12,7 +14,7 @@ public enum Type {
 
     private final String[] attribute;
 
-    Type(String... attribute) {
+    private Type(String... attribute) {
         this.attribute=attribute;
     }
 

@@ -7,7 +7,6 @@ public final class Monster {
     private final Type type;
     private final double attaque;
     private double lifePoint;
-
     private Etat etat = Etat.NORMAL;
 
     private int nbrTourEtat = 0;

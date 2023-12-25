@@ -1,9 +1,5 @@
 public class Combat {
 
-    Combat() {
-        //stocker ou non les joueurs
-    }
-
     /**
      * on admet ici que a.usage n'est pas déjà à zero
      * @param attaque attaque

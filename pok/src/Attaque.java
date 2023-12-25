@@ -3,22 +3,19 @@ public final class Attaque {
     private final Type type;
     private final double puissance;
     private int usage;
-    private final int probaEchec;
-    private final int vitesse;
+    private final double probaEchec;
 
     public Attaque(
             String nom,
             Type type,
             double puissance,
             int usage,
-            int probaEchec,
-            int vitesse) {
+            double probaEchec) {
         this.nom = nom;
         this.type = type;
         this.puissance = puissance;
         this.usage = usage;
         this.probaEchec = probaEchec;
-        this.vitesse = vitesse;
     }
 
     public void use() {
@@ -41,11 +38,7 @@ public final class Attaque {
         return usage;
     }
 
-    public int getProbaEchec() {
+    public double getProbaEchec() {
         return probaEchec;
-    }
-
-    public int getVitesse() {
-        return vitesse;
     }
 }
