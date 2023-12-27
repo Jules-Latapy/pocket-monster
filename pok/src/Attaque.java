@@ -5,6 +5,8 @@ public final class Attaque {
     private int usage;
     private final double probaEchec;
 
+    public static final Attaque MAIN_NUE = new Attaque("main-nue", Type.NORMAL, -1, -1, -1);
+
     public Attaque(
             String nom,
             Type type,

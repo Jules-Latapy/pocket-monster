@@ -43,8 +43,14 @@ public class Joueur {
 
         Choix whichMonster = new Choix("Quel pokémon voulez vous ?", POKEMON_CHOICES.keySet(), true);
 
-        for (int __=0; __<3; __++) {
+        for (int nbr=0; nbr<3; nbr++) {
             String chosenMonsterName = whichMonster.getInput();
+
+            //on oblige à avoir au moins 1 pokémon
+            if (nbr==2 && monsterList.isEmpty()) {
+                whichMonster = new Choix("Quel pokémon voulez vous ?", POKEMON_CHOICES.keySet(), false);
+                chosenMonsterName = whichMonster.getInput();
+            }
 
             if (chosenMonsterName!=null) {
                 Monster chosenMonster = POKEMON_CHOICES.get(chosenMonsterName);
@@ -52,9 +58,9 @@ public class Joueur {
                 Map<String, Attaque> onlyPokemonType = filterOnlyType(chosenMonster.getType(), ATTACK_CHOICES);
 
                 Choix whichAttack = new Choix("Quel attaque souhaitez-vous pour '"+chosenMonster.getName()+"' ?", onlyPokemonType.keySet(), true);
-                List<Attaque> attacks = new ArrayList<>(3);
+                List<Attaque> attacks = new ArrayList<>(5);
 
-                for (__ = 0; __ < 4; __++) {
+                for (int __ = 0; __ < 4; __++) {
                     String chosenAttackName = whichAttack.getInput();
 
                     if (chosenAttackName!=null) {
@@ -62,7 +68,7 @@ public class Joueur {
                     }
                 }
 
-                //ajout main nue
+                attacks.add(Attaque.MAIN_NUE);
 
                 chosenMonster.setAttaques(attacks.toArray(new Attaque[0]));
                 monsterList.add(chosenMonster);
@@ -114,7 +120,8 @@ public class Joueur {
 
     }
 
-    public void choisirAttaque() {
+    public Attaque choisirAttaque() {
 
+        return null;
     }
 }

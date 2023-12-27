@@ -14,7 +14,6 @@ public class Choix {
         //on doit maintenir l'ordre d'insertion + ne pas avoir de doublon
         choice = new LinkedHashMap<>();
 
-        ArrayList<Character> choiceletters = new ArrayList<>();
         Index i = new Index();
 
         if (nullable)
@@ -50,46 +49,29 @@ public class Choix {
         return choice.get(rep);
     }
 
-    static class Index {
+    public static class Index {
         int index;
-        Index() {index = 1;}
+        public Index() {index = 0;}
+
+        public Index(int beginAt) { index = beginAt; }
         void increment(){index++;}
 
         /**
          * @return
          */
-        String value() {
+        public String value() {
 
-            StringBuilder sb = new StringBuilder();
+            int cpt = index;
+            StringBuilder result = new StringBuilder();
 
-            int reminder = index;
-            int indexNbr = 0;
-            while (reminder>=0) {
-                int letter = (int) (reminder%Math.pow(26,indexNbr));
-                sb.append((char)('a'+letter));
-                indexNbr++;
-                reminder-=letter;
+            // Convertir le nombre en index
+            while (cpt >= 0) {
+                int remainder = cpt % 26;
+                result.insert(0, (char) ('a' + remainder));
+                cpt = (cpt / 26) - 1; // Soustraire 1 car 'a' correspond à zéro
             }
 
-            return sb.toString();
+            return result.toString();
         }
-
-        /*
-                    char charActu = 'a';
-            for (int i = index; i >= 0; i--) {
-
-                if (charActu=='z') {
-                    for (int i1 = 0; i1 < sb.length(); i1++) {
-                        if (sb.charAt(i1)!='z') {
-                            sb.setCharAt();
-                        }
-                    }
-                    charActu = 'a';
-                }
-                charActu++;
-            }
-
-            sb.append(charActu);
-        */
     }
 }

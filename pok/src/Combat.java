@@ -23,7 +23,7 @@ public class Combat {
             defense*=2;
         }
 
-        if (attaque.getNom().equals("main nue")) {
+        if (attaque.getNom().equals("main-nue")) {
             degat = 20 * (attaque.getPuissance() /defense)*coef;
         }
         else {
