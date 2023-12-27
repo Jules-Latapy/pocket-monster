@@ -1,1 +1,1 @@
-# pok-mouille
+# projet de poo autour de Pokémon
