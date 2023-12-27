@@ -1,16 +1,117 @@
 Monster
-    Name      Pikachu
-    Type      Electric
-    HP        110 141
-    Speed     110 141
-    Attack    75  106
-    Defense   50  82
-    Paralysis 0.2
+	Name Bulbasaur
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
 EndMonster
 
 Monster
-    Name    Cerapuca
-    Type    Water
+	Name Herbizarre
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
+EndMonster
+
+Monster
+	Name Florizarre
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
+EndMonster
+
+Monster
+	Name FlorizarreGigamax
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
+EndMonster
+
+Monster
+	Name Méga-Florizarre
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
+EndMonster
+
+Monster
+	Name Salamèche
+	Type Feu
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Burn    0.36
+EndMonster
+
+Monster
+	Name Reptincel
+	Type Feu
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Burn    0.36
+EndMonster
+
+Monster
+	Name Dracaufeu
+	Type Feu Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Burn    0.36
+EndMonster
+
+Monster
+	Name DracaufeuGigamax
+	Type Feu Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Burn    0.36
+EndMonster
+
+Monster
+	Name Méga-Dracaufeu
+	Type Feu Dragon
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Burn    0.36
+EndMonster
+
+Monster
+	Name Carapuce
+	Type Eau
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Carabaffe
+	Type Eau
     HP      119 150
     Attack  68 99
     Speed   63 94
@@ -19,5 +120,809 @@ Monster
     Fall    0.35
 EndMonster
 
+Monster
+	Name Tortank
+	Type Eau
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
 
+Monster
+	Name TortankGigamax
+	Type Eau
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
 
+Monster
+	Name Mega-Blastoise
+	Type Eau
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Chenipan
+	Type Insecte
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Chrysacier
+	Type Insecte
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Papilusion
+	Type Insecte Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name PapilusionGigamax
+	Type Insecte Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Aspicot
+	Type Insecte Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Coconfort
+	Type Insecte Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Dardargnan
+	Type Insecte Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Méga-Dardargnan
+	Type Insecte Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Roucool
+	Type Normal Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Roucoups
+	Type Normal Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Roucarnage
+	Type Normal Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Mega-Pidgeot
+	Type Normal Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Rattata
+	Type Normal
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Rattata-Forme-d'Alola
+	Type Normal Ténèbres
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Rattatac
+	Type Normal
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Rattatac-Forme-d'Alola
+	Type Normal Ténèbres
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Piafabec
+	Type Normal Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Rapasdepic
+	Type Normal Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Abo
+	Type Normal =Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Arbok
+	Type Normal =Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Pikachu
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Gigamax
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-Originale
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-de-Hoenn
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-de-Sinnoh
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-d'Unys
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-de-Kalos
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-d'Alola
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-Partenaire
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Casquette-Monde
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Cosplayeur
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Rockeur
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Lady
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Star
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Docteur
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Catcheur
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Pikachu-Partenaire
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Raichu
+	Type Electric
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Raichu-Forme-d'Alola
+	Type Electric Psy
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Paralysis 0.32
+EndMonster
+
+Monster
+	Name Sabelette
+	Type Terre
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Hide 	0.29
+EndMonster
+
+Monster
+	Name Sabelette-Formed'Alola
+	Type Eau =Glace Acier
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Sablaireau
+	Type Terre
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Hide 	0.29
+EndMonster
+
+Monster
+	Name Sablaireau-Forme-d'Alola
+	Type Eau =Glace Acier
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Nidoran-femelle
+	Type Normal =Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Nidorina
+	Type Normal =Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Nidoqueen
+	Type Normal =Poison Terre
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Nidoran-male
+	Type Normal =Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Nidorino
+	Type Normal =Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Nidoking
+	Type Normal =Poison Terre
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Mélofée
+	Type Normal =Fée
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Mélodelfe
+	Type Normal =Fée
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Goupix
+	Type Feu
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Burn    0.36
+EndMonster
+
+Monster
+	Name Goupix-Forme-d'Alola
+	Type Eau =Glace
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Feunard
+	Type Feu
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Burn    0.36
+EndMonster
+
+Monster
+	Name Feunard-Forme-d'Alola
+	Type Eau =Glace Fée
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Rondoudou
+	Type Normal Fée
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Grodoudou
+	Type Normal Fée
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Nosferapti
+	Type Normal =Poison Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Nosferalto
+	Type Normal =Poison Vol
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Mystherbe
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
+EndMonster
+
+Monster
+	Name Ortide
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
+EndMonster
+
+Monster
+	Name Rafflesia
+	Type Plante Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Heal    0.25
+EndMonster
+
+Monster
+	Name Paras
+	Type Insecte Plante
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Parasect
+	Type Insecte Plante
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Mimitoss
+	Type Insecte Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Aéromite
+	Type Insecte Poison
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Poison  0.41
+EndMonster
+
+Monster
+	Name Taupiqueur
+	Type Terre
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Hide 	0.29
+EndMonster
+
+Monster
+	Name Taupiqueur-Forme-d'Alola
+	Type Terre Acier
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Hide 	0.29
+EndMonster
+
+Monster
+	Name Triopikeur
+	Type Terre
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Hide 	0.29
+EndMonster
+
+Monster
+	Name Triopikeur-Forme-d'Alola
+	Type Terre Acier
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Hide 	0.29
+EndMonster
+
+Monster
+	Name Miaouss
+	Type Normal
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Miaouss-Gigamax
+	Type Normal
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Miaouss-Forme-d'Alola
+	Type Normal =Ténèbres
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Miaouss-Forme-de-Galar
+	Type Normal =Acier
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Persian
+	Type Normal
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Persian-Forme-d'Alola
+	Type Normal =Ténèbres
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Psykokwak
+	Type Eau
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Akwakwak
+	Type Eau
+    HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+    Flood   0.25
+    Fall    0.35
+EndMonster
+
+Monster
+	Name Férosinge
+	Type Normal =Combat
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster
+
+Monster
+	Name Colossinge
+	Type Normal =Combat
+	HP      119 150
+    Attack  68 99
+    Speed   63 94
+    Defense 85 116
+EndMonster

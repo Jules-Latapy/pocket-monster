@@ -64,7 +64,7 @@ public class RawMonster
         assertTypeCoherence();
 
         return new Monster(
-            new Attaque[4],
+            name,
             minHP + (int)(Math.random() * ((minHP - maxHP) + 1)),
             minDefense + (int)(Math.random() * ((minDefense - maxDefense) + 1)),
             minAttack + (int)(Math.random() * ((minAttack - maxAttack) + 1)),

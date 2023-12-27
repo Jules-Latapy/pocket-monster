@@ -1,18 +1,21 @@
 import java.util.Map;
 
 public final class Monster {
-    private final Attaque[] attaques;
+    private Attaque[] attaques;
+
     private final double defense;
     private final int vitesse;
     private final Type type;
     private final double attaque;
-    private double lifePoint;
-    private Etat etat = Etat.NORMAL;
+    private final Map<String, Double> specialAttribut;
+    private final String name;
 
+    private double lifePoint;
+
+    private Etat etat = Etat.NORMAL;
     private int nbrTourEtat = 0;
-    private Map<String, Double> specialAttribut;
     public Monster(
-            Attaque[] attaques,
+            String name,
             double lifePoint,
             double defense,
             double attaque,
@@ -20,13 +23,16 @@ public final class Monster {
             Type type,
             Map<String, Double> specialAttribut
     ) {
-        this.attaques = attaques;
-        this.lifePoint = lifePoint;
-        this.defense = defense;
-        this.attaque = attaque;
-        this.vitesse = vitesse;
-        this.type = type;
+        this.name            = name;
+        this.lifePoint       = lifePoint;
+        this.defense         = defense;
+        this.attaque         = attaque;
+        this.vitesse         = vitesse;
+        this.type            = type;
         this.specialAttribut = specialAttribut;
+    }
+    public String getName() {
+        return name;
     }
 
     public double getLifePoint() {
@@ -35,6 +41,10 @@ public final class Monster {
 
     public Attaque[] getAttaques() {
         return attaques;
+    }
+
+    public void setAttaques(Attaque[] attaques) {
+        this.attaques = attaques;
     }
 
     public double getDefence() {

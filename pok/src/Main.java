@@ -3,7 +3,7 @@ public class Main {
     public static void main(String[] args) {
         Joueur joueur1 = new Joueur();
         Joueur joueur2 = new Joueur();
-
+/*
         while (true) {
 
             System.out.println("que voulez vous faire ?");
@@ -23,8 +23,8 @@ public class Main {
             joueur1.choisirAttaque();
             joueur2.choisirAttaque();
 
-            //if (attack1&attaqck2 != null) {
+            //if (attack1&attack2 != null) {
             //if vitesse1 > vitesse2
-        }
+        }*/
     }
 }

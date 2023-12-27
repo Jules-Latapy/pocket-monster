@@ -2,8 +2,8 @@ public enum Type {
 
     NORMAL,
     FEU("Burn"),
-    WATER("Flood", "Fall"),
-    TERRE("Hid"),
+    EAU("Flood", "Fall"),
+    TERRE("Hide"),
     INSECTE("Poison"),
     PLANTE("Heal"),
     ELECTRIC("Paralysis");
@@ -21,9 +21,9 @@ public enum Type {
     public boolean estFaible(Type t2) {
         switch (this) {
             case FEU:
-                if (t2== WATER)
+                if (t2== EAU)
                     return true;
-            case WATER:
+            case EAU:
                 if (t2== ELECTRIC)
                     return true;
             case ELECTRIC:
@@ -43,11 +43,11 @@ public enum Type {
 
     public boolean estFort(Type t2) {
         switch (this) {
-            case WATER:
+            case EAU:
                 if (t2==FEU)
                     return true;
             case ELECTRIC:
-                if (t2== WATER)
+                if (t2== EAU)
                     return true;
             case TERRE:
                 if (t2== ELECTRIC)

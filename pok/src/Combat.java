@@ -43,7 +43,7 @@ public class Combat {
             attaque.use();
         }
 
-        if (attaquant.getEtat()==Etat.MOUILLER && attaquant.getType()!=Type.WATER) {
+        if (attaquant.getEtat()==Etat.MOUILLER && attaquant.getType()!=Type.EAU) {
             if ((int)(Math.random() * 101) <= attaquee.getSpecialAttribut().get("Fall")) {
                 attaquant.setLifePoint( attaquant.getLifePoint() - degat * 0.25 );
                 return;
