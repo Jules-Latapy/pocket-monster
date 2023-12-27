@@ -9,9 +9,9 @@ public class Choix {
         this(question, List.of(possibilities), nullable);
     }
 
-    public Choix(String question, Collection<String> possibilities, boolean nullable) {
+    public Choix(String question, Iterable<String> possibilities, boolean nullable) {
 
-        //on doit maintenir l'ordre d'insertion + ne pas avoir de doublon
+        //on doit maintenir l'ordre d'insertion s'il y en a un + ne pas avoir de doublon
         choice = new LinkedHashMap<>();
 
         Index i = new Index();
@@ -41,6 +41,8 @@ public class Choix {
         String rep ;
 
         do {
+            System.out.print("\033[H\033[2J");
+            System.out.flush();
             System.out.println(output);
             rep = scanner.next().trim();
         }

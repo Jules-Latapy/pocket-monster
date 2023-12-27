@@ -13,3 +13,27 @@ Attack
     NbUse 15
     Fail 0.03
 EndAttack
+
+Attack
+    Name mange-tes-mort
+    Type Normal
+    Power 40
+    NbUse 16
+    Fail 0.03
+EndAttack
+
+Attack
+    Name ET-TOUDINKOU
+    Type Normal
+    Power 45
+    NbUse 10
+    Fail 0.6
+EndAttack
+
+Attack
+    Name SHAKIRA-ES-TU?
+    Type Normal
+    Power 36
+    NbUse 18
+    Fail 0.2
+EndAttack
