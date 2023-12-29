@@ -24,7 +24,7 @@ public class Combat {
         }
 
         if (attaque.getNom().equals("main-nue")) {
-            degat = 20 * (attaque.getPuissance() /defense)*coef;
+            degat = 20 * (attaquant.getAttaque() /defense)*coef;
         }
         else {
 
@@ -38,7 +38,7 @@ public class Combat {
                 avantage = 2;
             }
 
-            degat = 20 * ((11*attaque.getPuissance()*attaquant.getAttaque() /25*defense)+2)*avantage*coef;
+            degat = 20 * ((11*attaquant.getAttaque() * attaque.getPuissance()/25*defense)+2)*avantage*coef;
 
             attaque.use();
         }

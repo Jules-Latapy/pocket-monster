@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Joueur {
@@ -27,6 +28,7 @@ public class Joueur {
 
 
     //From command line
+
     public Joueur() {
 
         Choix whichObjet = new Choix("Quel objet voulez vous ?", OBJET_CHOICES, true);
@@ -65,7 +67,7 @@ public class Joueur {
                     String chosenAttackName = whichAttack.getInput();
 
                     if (chosenAttackName!=null) {
-                        attacks.add(onlyPokemonType.get(chosenMonsterName));
+                        attacks.add(onlyPokemonType.get(chosenAttackName));
                     }
                 }
 
@@ -78,7 +80,6 @@ public class Joueur {
 
         monstrePrincipal = monstres.get(0);
     }
-
     private static Map<String, Monster> initPokemonChoices() {
         //on doit maintenir l'ordre
         Map<String, Monster> result = new LinkedHashMap<>();
@@ -89,6 +90,7 @@ public class Joueur {
 
         return result;
     }
+
     private static Map<String, Attaque> initAttaqueChoices() {
         //on doit maintenir l'ordre
         Map<String, Attaque> result = new LinkedHashMap<>();
@@ -99,9 +101,9 @@ public class Joueur {
 
         return result;
     }
-
     private static Map<String, Attaque> filterOnlyType(Type type, Map<String, Attaque> from) {
         Map<String, Attaque> result = new LinkedHashMap<>();
+
         for (Map.Entry<String, Attaque> kv : from.entrySet()) {
             if (kv.getValue().getType()==type || kv.getValue().getType()==Type.NORMAL)
                 result.put(kv.getKey(), kv.getValue());
@@ -111,7 +113,16 @@ public class Joueur {
     }
 
     public void changerMonstre() {
-        //Choix whichMonster = new Choix("",)
+
+        Map<String, Monster> withoutPrincipal = monstres.stream().collect(Collectors.toMap(Monster::getName, Function.identity()));
+
+        withoutPrincipal.remove(this.monstrePrincipal.getName());
+
+        Choix whichMonster = new Choix("Pour quel pokémon changez ?", withoutPrincipal.keySet(), false);
+
+        String input = whichMonster.getInput();
+
+        monstrePrincipal = withoutPrincipal.get(input);
     }
 
     public void utiliserObjet() {
@@ -125,6 +136,7 @@ public class Joueur {
         if (input != null) {
            Objet objet = Objet.fromSentenceLike(input);
            objet.consume(monstrePrincipal);
+           this.objets.remove(objet);
         }
     }
 

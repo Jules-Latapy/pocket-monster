@@ -8,7 +8,7 @@ public class Main {
         Joueur joueur1 = new Joueur();
         Joueur joueur2 = new Joueur();
 
-        while (joueur1.asLost() || joueur2.asLost()) {
+        while (!joueur1.asLost() && !joueur2.asLost()) {
 
             System.out.println("(Joueur 1)");
             Attaque attaque1 = getAction(joueur1);
@@ -37,9 +37,29 @@ public class Main {
                         Combat.attaque(attaque2, joueur2.getMonstrePrincipal(), joueur1.getMonstrePrincipal());
                         Combat.attaque(attaque1, joueur1.getMonstrePrincipal(), joueur2.getMonstrePrincipal());
                     }
+
+            System.out.println("Joueur 1 :"+joueur1.getMonstrePrincipal().getName() + ", " + joueur1.getMonstrePrincipal().getLifePoint());
+            System.out.println("Joueur 2 :"+joueur2.getMonstrePrincipal().getName() + ", " + joueur2.getMonstrePrincipal().getLifePoint());
+
+            suppressMainPokemonIfDead(joueur1);
+            suppressMainPokemonIfDead(joueur2);
         }
 
         System.out.println("le joueur "+(joueur1.asLost()?"1":"2") + " a perdu !");
+    }
+
+    private static void suppressMainPokemonIfDead(Joueur joueur) {
+        if (joueur.getMonstrePrincipal().getLifePoint()>0) {
+            return;
+        }
+
+        System.out.println(joueur.getMonstrePrincipal().getName() + " est KO!");
+
+        joueur.getMonstres().remove(joueur.getMonstrePrincipal());
+
+        if (!joueur.getMonstres().isEmpty()) {
+            joueur.changerMonstre();
+        }
     }
 
     private static Attaque getAction(Joueur joueur) {
