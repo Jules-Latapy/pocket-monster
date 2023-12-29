@@ -31,17 +31,16 @@ public class Joueur {
 
     public Joueur() {
 
-        Choix whichObjet = new Choix("Quel objet voulez vous ?", OBJET_CHOICES, true);
-
-        for (int i = 0; i <5; i++) {
-            String chosenObjetName = whichObjet.getInput();
-
-            if (chosenObjetName!=null) {
-                objets.add(Objet.fromSentenceLike(chosenObjetName));
-            }
-        }
+        initObjet();
 
         /*----------------------------*/
+
+        initPokemon();
+
+        monstrePrincipal = monstres.get(0);
+    }
+
+    private void initPokemon() {
         Choix whichMonster = new Choix("Quel pokémon voulez vous ?", POKEMON_CHOICES.keySet(), true);
 
         for (int counter = 0; counter <3; counter++) {
@@ -63,11 +62,12 @@ public class Joueur {
                 List<Attaque> attacks = new ArrayList<>(5);
 
                 for (int i = 0; i < 4; i++) {
-                    //TODO enlever l'attaque choisi
+
                     String chosenAttackName = whichAttack.getInput();
 
                     if (chosenAttackName!=null) {
                         attacks.add(onlyPokemonType.get(chosenAttackName));
+                        onlyPokemonType.remove(chosenAttackName);
                     }
                 }
 
@@ -77,9 +77,20 @@ public class Joueur {
                 monstres.add(chosenMonster);
             }
         }
-
-        monstrePrincipal = monstres.get(0);
     }
+
+    private void initObjet() {
+        Choix whichObjet = new Choix("Quel objet voulez vous ?", OBJET_CHOICES, true);
+
+        for (int i = 0; i <5; i++) {
+            String chosenObjetName = whichObjet.getInput();
+
+            if (chosenObjetName!=null) {
+                objets.add(Objet.fromSentenceLike(chosenObjetName));
+            }
+        }
+    }
+
     private static Map<String, Monster> initPokemonChoices() {
         //on doit maintenir l'ordre
         Map<String, Monster> result = new LinkedHashMap<>();
@@ -142,14 +153,18 @@ public class Joueur {
 
     public Attaque choisirAttaque() {
 
+        Map<String, Attaque> collect = Arrays.stream(this.monstrePrincipal.getAttaques())
+                .filter(a -> a.getUsage() > 0)
+                .collect(
+                        Collectors.toMap(Attaque::getNom, Function.identity()));
+
         Choix whichAttack = new Choix("Quel attaque utiliser pour le pokemon '"+monstrePrincipal.getName()+"'?",
-                Arrays.stream(this.monstrePrincipal.getAttaques()).filter(a->a.getUsage()>0).map(Attaque::getNom).collect(Collectors.toList()),
+                collect.keySet(),
                 false);
 
         String input = whichAttack.getInput();
 
-        Optional<Attaque> p  = Arrays.stream(this.monstrePrincipal.getAttaques()).filter(attaque -> attaque.getNom().equals(input)).findAny();
-        return p.orElse(null);
+        return collect.get(input);
     }
 
     public List<Monster> getMonstres() {

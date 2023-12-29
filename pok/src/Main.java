@@ -10,6 +10,8 @@ public class Main {
 
         while (!joueur1.asLost() && !joueur2.asLost()) {
 
+            debutTour(joueur1, joueur2);
+
             System.out.println("(Joueur 1)");
             Attaque attaque1 = getAction(joueur1);
 
@@ -48,6 +50,11 @@ public class Main {
         System.out.println("le joueur "+(joueur1.asLost()?"1":"2") + " a perdu !");
     }
 
+    private static void debutTour(Joueur joueur1, Joueur joueur2) {
+        //plante +0.2% si innondé
+        //1/10 attaque d'un pokémon brulé
+    }
+
     private static void suppressMainPokemonIfDead(Joueur joueur) {
         if (joueur.getMonstrePrincipal().getLifePoint()>0) {
             return;
@@ -80,8 +87,8 @@ public class Main {
 
         switch (action.getInput()) {
             case "attaquer" -> {return joueur.choisirAttaque();}
-            case "utiliser un objet" -> joueur.changerMonstre();
-            case "changer de monstre" -> joueur.utiliserObjet();
+            case "utiliser un objet" ->  joueur.utiliserObjet();
+            case "changer de monstre" -> joueur.changerMonstre();
         }
 
         return null;

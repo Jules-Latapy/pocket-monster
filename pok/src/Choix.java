@@ -3,7 +3,7 @@ import java.util.*;
 public class Choix {
 
     private final String output;
-    private final Map<String, String> choice;
+    private final Map<String, String> indexWithName;
 
     public Choix(String question, String[] possibilities, boolean nullable) {
         this(question, List.of(possibilities), nullable);
@@ -12,23 +12,23 @@ public class Choix {
     public Choix(String question, Iterable<String> possibilities, boolean nullable) {
 
         //on doit maintenir l'ordre d'insertion s'il y en a un + ne pas avoir de doublon
-        choice = new LinkedHashMap<>();
+        indexWithName = new LinkedHashMap<>();
 
         Index i = new Index();
 
         if (nullable)
-            choice.put("*", null);
+            indexWithName.put("*", null);
 
         for (String possibility : possibilities) {
             String key = i.value();
-            choice.put(key, possibility);
+            indexWithName.put(key, possibility);
             i.increment();
         }
 
         StringBuilder stringBuilder = new StringBuilder(question).append("\n");
 
         //pour eviter de recree la chaine a chaque fois on utilise un StringBuilder
-        for (Map.Entry<String, String> entry : choice.entrySet()) {
+        for (Map.Entry<String, String> entry : indexWithName.entrySet()) {
             stringBuilder.append("\t").append(entry.getKey()).append(") ").append(entry.getValue()).append("\n");
         }
 
@@ -46,9 +46,9 @@ public class Choix {
             System.out.println(output);
             rep = scanner.next().trim();
         }
-        while (!choice.containsKey(rep));
+        while (!indexWithName.containsKey(rep));
 
-        return choice.get(rep);
+        return indexWithName.get(rep);
     }
 
     public static class Index {

@@ -13,7 +13,9 @@ public final class Monster {
     private double lifePoint;
 
     private Etat etat = Etat.NORMAL;
+
     private int nbrTourEtat = 0;
+
     public Monster(
             String name,
             double lifePoint,
@@ -34,7 +36,6 @@ public final class Monster {
     public String getName() {
         return name;
     }
-
     public double getLifePoint() {
         return lifePoint;
     }
@@ -77,5 +78,13 @@ public final class Monster {
 
     public Map<String, Double> getSpecialAttribut() {
         return specialAttribut;
+    }
+
+    public int getNbrTourEtat() {
+        return nbrTourEtat;
+    }
+
+    public void setNbrTourEtat(int nbrTourEtat) {
+        this.nbrTourEtat = nbrTourEtat;
     }
 }
