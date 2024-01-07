@@ -16,6 +16,12 @@ public final class Monster {
 
     private int nbrTourEtat = 0;
 
+    //caché n'est pas dans l'Enum "Etat"
+    //car il est additionnable à un état
+    boolean cachee = false;
+
+    int nbrTourCachee = 0;
+
     public Monster(
             String name,
             double lifePoint,
@@ -33,9 +39,11 @@ public final class Monster {
         this.type            = type;
         this.specialAttribut = specialAttribut;
     }
+
     public String getName() {
         return name;
     }
+
     public double getLifePoint() {
         return lifePoint;
     }
@@ -43,11 +51,9 @@ public final class Monster {
     public Attaque[] getAttaques() {
         return attaques;
     }
-
     public void setAttaques(Attaque[] attaques) {
         this.attaques = attaques;
     }
-
     public double getDefence() {
         return defense;
     }
@@ -86,5 +92,21 @@ public final class Monster {
 
     public void setNbrTourEtat(int nbrTourEtat) {
         this.nbrTourEtat = nbrTourEtat;
+    }
+
+    public boolean isCachee() {
+        return cachee;
+    }
+
+    public void setCachee(boolean cachee) {
+        this.cachee = cachee;
+    }
+
+    public int getNbrTourCachee() {
+        return nbrTourCachee;
+    }
+
+    public void setNbrTourCachee(int nbrTourCachee) {
+        this.nbrTourCachee = nbrTourCachee;
     }
 }

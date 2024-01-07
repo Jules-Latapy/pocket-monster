@@ -26,10 +26,14 @@ public class Joueur {
 
     private Monster monstrePrincipal;
 
+    private final Terrain terrainPartage ;
+
+
 
     //From command line
+    public Joueur(Terrain terrain) {
 
-    public Joueur() {
+        terrainPartage = terrain;
 
         initObjet();
 
@@ -112,6 +116,7 @@ public class Joueur {
 
         return result;
     }
+
     private static Map<String, Attaque> filterOnlyType(Type type, Map<String, Attaque> from) {
         Map<String, Attaque> result = new LinkedHashMap<>();
 
@@ -122,12 +127,21 @@ public class Joueur {
 
         return result;
     }
-
     public void changerMonstre() {
 
-        Map<String, Monster> withoutPrincipal = monstres.stream().collect(Collectors.toMap(Monster::getName, Function.identity()));
+        //opération impossible
+        if (monstres.size()==1) {
+            return;
+        }
 
+        Map<String, Monster> withoutPrincipal = monstres.stream().collect(Collectors.toMap(Monster::getName, Function.identity()));
         withoutPrincipal.remove(this.monstrePrincipal.getName());
+
+        if (withoutPrincipal.size()==1) {
+            monstrePrincipal= withoutPrincipal.values().stream().findAny().orElseThrow();
+            System.out.println("Monstre changé !");
+            return;
+        }
 
         Choix whichMonster = new Choix("Pour quel pokémon changez ?", withoutPrincipal.keySet(), false);
 
@@ -146,7 +160,7 @@ public class Joueur {
 
         if (input != null) {
            Objet objet = Objet.fromSentenceLike(input);
-           objet.consume(monstrePrincipal);
+           objet.consume(monstrePrincipal, terrainPartage);
            this.objets.remove(objet);
         }
     }
@@ -181,5 +195,9 @@ public class Joueur {
 
     public boolean asLost() {
         return monstres.isEmpty();
+    }
+
+    public Terrain getTerrain() {
+        return terrainPartage;
     }
 }

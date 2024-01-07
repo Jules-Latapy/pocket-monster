@@ -63,4 +63,8 @@ public enum Type {
                 return false;
         }
     }
+
+    public boolean isNature() {
+        return this==INSECTE || this==PLANTE;
+    }
 }

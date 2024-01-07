@@ -13,7 +13,8 @@ public class RawMonster
     private int minDefense;
     private int maxDefense;
 
-    private Map<String, Double> specialAttribut = new HashMap<>();
+    //TODO encapsuler plus
+    private final Map<String, Double> specialAttribut = new HashMap<>();
 
     public void setName(String name) {
         this.name = name;
@@ -74,6 +75,9 @@ public class RawMonster
             );
     }
 
+    /**
+     * Verifie que les types ont bien leur variable associé et pas d'autres
+     */
     private void assertTypeCoherence() {
         List<String> attributes = new ArrayList<>(specialAttribut.keySet());
         attributes.sort(String::compareTo);
